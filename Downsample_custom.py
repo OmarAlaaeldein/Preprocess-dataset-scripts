@@ -1,6 +1,6 @@
 import os
 import cv2
-path=r'C:\endgame'# Parent(root) directory, this script will downsample every PNG within it
+path=r'C:\correct'# Parent(root) directory, this script will downsample every PNG within it
 def Downsample(path,new_width,new_height,format):
     for root, dirs, files in os.walk(path):
         for file in files:
@@ -10,4 +10,4 @@ def Downsample(path,new_width,new_height,format):
                 cv2.imwrite(os.path.join(root,file),img)
                 print('Downsampled {} to ({},{})'.format(file,new_width,new_height))
     return "Completed!!!"
-Downsample(path,256,256,'png')
+Downsample(path,400,300,'png')
